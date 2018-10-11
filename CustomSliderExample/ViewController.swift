@@ -9,25 +9,45 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let rangeSlider = RangeSlider(frame: CGRect.zero)
+  
+  let rangeSlider = RangeSlider(frame: CGRect.zero)
+  @IBOutlet private weak var leftLabel: UILabel!
+  @IBOutlet private weak var middleLabel: UILabel!
+  @IBOutlet private weak var rightLabel: UILabel!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        rangeSlider.backgroundColor = .clear
-        
-        view.addSubview(rangeSlider)
+    rangeSlider.backgroundColor = .clear
+    
+    rangeSlider.setupLimits(minimumValue: 0, maximumValue: 100)
+    rangeSlider.setupSliderForCurrent(lowerValue: 4, upperValue: 60)
+    
+    rangeSlider.setupLimitsLowerThumb(minimumValue: 10, maximumValue: 50)
+    rangeSlider.setupLimitsUpperThumb(minimumValue: 60, maximumValue: 80)
+    
+    rangeSlider.eventHandler = { event in
+      switch event {
+      case let .leftUpdate(value):
+        self.leftLabel.text = String(format: "%.0f", value)
+      case let .rightUpdate(value):
+        self.rightLabel.text = String(format: "%.0f", value)
+      case let .midUpdate(value):
+        self.middleLabel.text = String(format: "%.0f", value)
+      }
     }
     
-    override func viewDidLayoutSubviews() {
-        let margin: CGFloat = 20
-        let width = view.bounds.width - 2 * margin
-        
-        rangeSlider.frame = CGRect(x: margin,
-                                   y: margin + self.view.safeAreaInsets.top ,
-                                   width: width,
-                                   height: 70)
-    }
+    view.addSubview(rangeSlider)
+  }
+  
+  override func viewDidLayoutSubviews() {
+    let margin: CGFloat = 20
+    let width = view.bounds.width - 2 * margin
+    
+    rangeSlider.frame = CGRect(x: margin,
+                               y: margin + self.view.safeAreaInsets.top ,
+                               width: width,
+                               height: 70)
+  }
 }
 
