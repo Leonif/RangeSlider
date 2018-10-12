@@ -35,13 +35,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCM-DA-kOj">
+                                <rect key="frame" x="16" y="382" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l8u-0k-GTl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Q8-ZE-i7c"/>
                             <constraint firstItem="gFA-O2-MnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A2p-4P-HNt"/>
                             <constraint firstItem="4nm-8L-j7s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EhH-Mq-5lB"/>
+                            <constraint firstItem="UCM-DA-kOj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JBY-9M-cmN"/>
+                            <constraint firstItem="UCM-DA-kOj" firstAttribute="top" secondItem="gFA-O2-MnY" secondAttribute="bottom" constant="38" id="Max-BE-lnN"/>
                             <constraint firstItem="gFA-O2-MnY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TV8-Kg-ipu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UCM-DA-kOj" secondAttribute="trailing" constant="16" id="quo-0U-9zX"/>
                             <constraint firstItem="4nm-8L-j7s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="r1d-QK-RKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l8u-0k-GTl" secondAttribute="trailing" constant="16" id="rGL-qP-V4h"/>
                         </constraints>
@@ -49,6 +58,7 @@
                     </view>
                     <connections>
                         <outlet property="leftLabel" destination="4nm-8L-j7s" id="XQk-x6-ft2"/>
+                        <outlet property="messageLabel" destination="UCM-DA-kOj" id="aMy-wS-XWD"/>
                         <outlet property="middleLabel" destination="gFA-O2-MnY" id="IAO-cV-wYF"/>
                         <outlet property="rightLabel" destination="l8u-0k-GTl" id="Z1L-SU-0Ja"/>
                     </connections>
